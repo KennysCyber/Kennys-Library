@@ -1,0 +1,42 @@
+~Powershell File Hasher~ #creation-10/2024 
+
+  #Created to be a desktop icon you can drag and drop files onto and will output assocaited hashes for checking.
+
+1) Create a PS1 file with below script.
+  # PowerShell Script to Calculate SHA256 and MD5 Hashes of a File Using Drag-and-Drop
+  
+  # Check if a file path is passed as an argument
+  if ($args.Count -eq 0) {
+      Write-Host "No file provided. Please drag and drop a file onto this script."
+      exit
+  }
+  
+  # Assign the file path from arguments
+  $filePath = $args[0]
+  
+  # Check if the file exists
+  if (Test-Path $filePath) {
+      # Calculate SHA256 hash
+      $sha256 = Get-FileHash -Path $filePath -Algorithm SHA256
+      Write-Host "SHA256 Hash: $($sha256.Hash)"
+  
+      # Calculate MD5 hash
+      $md5 = Get-FileHash -Path $filePath -Algorithm MD5
+      Write-Host "MD5 Hash: $($md5.Hash)"
+  } else {
+      Write-Host "File not found. Please check the file path and try again."
+  }
+
+  # Keep the window open to view the result
+  Read-Host -Prompt "Press Enter to exit"
+
+2) Create a shortcut on Desktop
+
+3) #Desktop shortcut (add below as Target field in properties) Include correct path to ps1 file saved.
+  C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -File <C:\Users\..\Hasher.ps1>
+
+4) # In properties of shortcut add this location to "Start In" field.
+  C:\Windows\System32\WindowsPowerShell\v1.0
+
+5) Test by dragging and dropping file onto shortcut.
+  
