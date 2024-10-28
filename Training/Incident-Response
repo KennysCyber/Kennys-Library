@@ -1,0 +1,17 @@
+Different organizations have published standardized methods to perform Incident Response. 
+
+NIST has defined a process in their SP-800-61 Incident Handling guide, which has the following steps:
+
+  Preparation
+  Detection and Analysis
+  Containment, Eradication, and Recovery
+  Post-incident Activity
+
+Similarly, SANS has published an Incident Handler's handbook. The handbook defines the steps as follows:
+
+  Preparation
+  Identification
+  Containment
+  Eradication
+  Recovery
+  Lessons Learned
