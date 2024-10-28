@@ -19,18 +19,13 @@
 #the past networks a given machine was connected to can be found in the following locations:
 
   -SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged
-
   -SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Managed
 
 ~Autostart Programs (Autoruns):
   -NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Run
-  
   -NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\RunOnce
-  
   -SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce
-  
   -SOFTWARE\Microsoft\Windows\CurrentVersion\policies\Explorer\Run
-  
   -SOFTWARE\Microsoft\Windows\CurrentVersion\Run
 
 ~Services: 
@@ -38,3 +33,46 @@
 
 ~SAM hive and user information:
   -SAM\Domains\Account\Users
+
+~Recent Files:
+  -NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs
+#you can search for specific files by adding a "\.pdf" to the end.
+
+~Office Recent Files:
+  -NTUSER.DAT\Software\Microsoft\Office\VERSION\UserMRU\LiveID_####\FileMRU
+
+~ShellBags:"When any user opens a folder, it opens in a specific layout."
+  -USRCLASS.DAT\Local Settings\Software\Microsoft\Windows\Shell\Bags
+
+  -USRCLASS.DAT\Local Settings\Software\Microsoft\Windows\Shell\BagMRU
+  -NTUSER.DAT\Software\Microsoft\Windows\Shell\BagMRU
+  -NTUSER.DAT\Software\Microsoft\Windows\Shell\Bags
+
+~Open/Save and LastVisited Dialog MRUs:"This implies that we can find out recently used files if we get our hands on this information."
+
+  -NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSavePIDlMRU
+  -NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRU
+
+~Windows Explorer Address/Search Bars:
+  -NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths
+  -NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\WordWheelQuery
+
+~UserAssist:Windows keeps track of applications launched by the user using Windows Explorer 
+  -NTUSER.DAT\Software\Microsoft\Windows\Currentversion\Explorer\UserAssist\{GUID}\Count
+
+~AmCache:This data includes execution path, installation, execution and deletion times, and SHA1 hashes of the executed programs. 
+  -C:\Windows\appcompat\Programs\Amcache.hve
+
+~BAM/DAM:This location contains information about last run programs, their full paths, and last execution time.
+  -SYSTEM\CurrentControlSet\Services\bam\UserSettings\{SID}
+  -SYSTEM\CurrentControlSet\Services\dam\UserSettings\{SID}
+
+@~Device identification:The following locations keep track of USB keys plugged into a system. 
+  -SYSTEM\CurrentControlSet\Enum\USBSTOR
+  -SYSTEM\CurrentControlSet\Enum\USB
+
+~First/Last Times: tracks the first time the device was connected
+  -SYSTEM\CurrentControlSet\Enum\USBSTOR\Ven_Prod_Version\USBSerial#\Properties\{83da6326-97a6-4088-9453-a19231573b29}\####
+
+~USB device Volume Name:The device name of the connected drive can be found at the following location:
+  -SOFTWARE\Microsoft\Windows Portable Devices\Devices
