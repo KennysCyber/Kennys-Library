@@ -1,1 +1,40 @@
+-
+~OS Version: 
+  -SOFTWARE\Microsoft\Windows NT\CurrentVersion
 
+~Current control set: The hives containing the machine’s configuration data used for controlling system startup are called Control Sets.
+  -SYSTEM\ControlSet001
+  -SYSTEM\ControlSet002
+#Windows creates a volatile Control Set when the machine is live, called the CurrentControlSet (
+  -HKLM\SYSTEM\CurrentControlSet)
+
+~Computer Name:
+  -SYSTEM\CurrentControlSet\Control\ComputerName\ComputerName
+
+~Time Zone Information:
+  -SYSTEM\CurrentControlSet\Control\TimeZoneInformation
+
+~Network Interfaces and Past Networks:
+  -SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces
+#the past networks a given machine was connected to can be found in the following locations:
+
+  -SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged
+
+  -SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Managed
+
+~Autostart Programs (Autoruns):
+  -NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Run
+  
+  -NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\RunOnce
+  
+  -SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce
+  
+  -SOFTWARE\Microsoft\Windows\CurrentVersion\policies\Explorer\Run
+  
+  -SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+
+~Services: 
+  -SYSTEM\CurrentControlSet\Services
+
+~SAM hive and user information:
+  -SAM\Domains\Account\Users
