@@ -1,0 +1,46 @@
+Disk Imaging Tools
+  dd - Free
+  FTK Imager - Free
+  Guymager - Free
+  EnCase Forensic - Paid
+  X-Ways Forensics - Paid
+  Magnet AXIOM - Paid
+
+Memory Acquisition & Analysis Tools
+  Volatility - Free
+  Belkasoft RAM Capturer - Free
+  LiME (Linux Memory Extractor) - Free
+  EnCase Forensic - Paid (also supports memory analysis)
+  X-Ways Forensics - Paid (also supports memory analysis)
+  Magnet AXIOM - Paid (also supports memory analysis)
+
+Network Forensics
+  Wireshark - Free
+  NetFlow Analyzer - Paid (offers a free trial)
+  Xplico - Free
+  Magnet AXIOM Cyber - Paid (includes network forensics capabilities)
+
+Mobile Device Forensics
+  Cellebrite UFED - Paid
+  Oxygen Forensic Detective - Paid
+  Magnet AXIOM - Paid (supports mobile forensics)
+
+Cloud Forensics
+  AWS CloudTrail - Free (for basic usage)
+  Microsoft Azure Security Center - Paid (with some free features)
+  Magnet AXIOM Cyber - Paid (supports cloud data collection)
+
+Email and Document Forensics
+  Aid4Mail - Paid (offers a free trial)
+  X1 Social Discovery - Paid
+  MailXaminer - Paid
+
+Database Forensics
+  Forensic Explorer - Paid
+  DB Forensics - Paid
+  SQL Server Forensics - Free (custom scripts)
+
+Malware Analysis
+  Cuckoo Sandbox - Free
+  Ghidra - Free
+  YARA - Free
