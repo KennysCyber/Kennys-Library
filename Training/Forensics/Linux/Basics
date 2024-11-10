@@ -1,0 +1,27 @@
+~Login information
+  -In the /var/log directory, we can find log files of all kinds including wtmp and btmp. The btmp file saves information about failed logins, while the wtmp keeps historical data of logins. These files are not regular text files that can be read using cat, less or vim; instead, they are binary files, which have to be read using the last utility.
+
+  "last -f /var/log/wtmp"
+
+~Authentication logs
+  -Every user that authenticates on a Linux host is logged in the auth log. The auth log is a file placed in the location /var/log/auth.log. It can be read using the cat utility, however, given the size of the file, we can use tail, head, more or less utilities to make it easier to read.
+
+  "cat /var/log/auth.log tail"
+
+~cat /etc/hostname = hostname
+
+~cat /etc/timezone = timezone
+
+~cat /etc/network/interfaces = network info
+
+~netstat = active network connections
+
+~ps = see process (has different flags man it)
+
+~cat /etc/hosts = DNS infomation
+  /etc/resolv.conf = windows host file
+
+
+
+
+
