@@ -21,6 +21,33 @@
 ~cat /etc/hosts = DNS infomation
   /etc/resolv.conf = windows host file
 
+Persitance
+
+~Cron Jobs "scheduled task"
+  /etc/crontab
+
+
+~Service Jobs = Like Windows, services can be set up in Linux that will start and run in the background after every system boot. 
+  /etc/init.d
+
+~.BashRC - When a bash shell is spawned, it runs the commands stored in the .bashrc file.
+  -System-wide settings are stored in /etc/bash.bashrc and /etc/profile files, 
+
+~Sudo history stored in Auth.log (grep sudo)
+
+
+~Syslog
+  cd /var/log/syslog
+
+
+
+~Bash History-  when examining bash history, we need to get the bash_history file from each user's home directory.
+  /home/$usr/.bash_history
+
+~Vim history
+  /home/$user/.viminfo
+
+
 
 
 
