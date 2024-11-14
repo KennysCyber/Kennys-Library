@@ -9,3 +9,60 @@ Great read- https://www.firewall.cx/networking/network-protocols/tcp-udp-protoco
 
 
 Scanning techinques:
+-SYN Scan
+Packet Flags: SYN
+Description: Often called a "half-open" scan, as the scanner sends a SYN packet to a target port and awaits a response but doesn’t complete the TCP handshake.
+
+-Full Connect Scan
+Packet Flags: SYN, ACK
+Description: Completes the three-way handshake by sending SYN and expecting SYN/ACK, followed by an ACK to establish a full connection before closing it.
+
+-NULL Scan
+Packet Flags: None (No flags set)
+Description: Sends a packet with no TCP flags set, which is unusual and may prompt specific responses from open and closed ports.
+
+-FIN Scan
+Packet Flags: FIN
+Description: Sends packets with only the FIN flag, which can sometimes bypass firewalls or intrusion detection systems (IDS).
+
+-Xmas Scan
+Packet Flags: FIN, URG, PSH
+Description: All these flags set create a "lit-up" packet, resembling a Christmas tree, often used to identify open ports based on response behavior.
+
+-ACK Scan
+Packet Flags: ACK
+Description: Typically used to map out firewall rules, as it doesn’t establish a connection and instead checks if ports are filtered.
+
+-Window Scan
+Packet Flags: ACK
+Description: Similar to an ACK scan but checks the TCP Window size returned by the target, which may reveal open or closed ports based on differences in the window size.
+
+-Maimon Scan
+Packet Flags: FIN, ACK
+Description: Combines FIN and ACK, relying on how systems respond to determine whether ports are open or closed.
+
+-UDP Scan
+Packet Type: UDP (no flags)
+Description: Sends UDP packets to probe open UDP ports. Detecting UDP scans may rely on ICMP "port unreachable" messages from closed ports.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Wireshark filters 4 Technique:
+
+TCP SYN scan (nmap -sS <target>)
+tcp.flags.syn==1 and tcp.flags.ack==0 and tcp.window_size<=1024
+
+TCP Connect() scan (nmap -sT <target>)
+tcp.flags.syn==1 and tcp.flags.ack==0 and tcp.window_size>1024
+
+TCP Null scan (nmap -sN <target>)
+tcp.flags==0
+
+TCP FIN scan (nmap -sF <target>)
+tcp.flags==0x001
+
+TCP Xmass scan (nmap -sX <target>)
+tcp.flags.fin==1 && tcp.flags.push==1 && tcp.flags.urg==1
+
+UDP port scan (nmap -sU <target>)
+icmp.type==3 and icmp.code==3
