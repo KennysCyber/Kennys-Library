@@ -1,0 +1,11 @@
+Great read- https://www.firewall.cx/networking/network-protocols/tcp-udp-protocol/tcp-flag-options.html
+
+1-Urg Pointer - Flag to repersent urgency 
+2-ACK - Acknoledgemnt from host
+3-Push - Used to set urgency on data but also unsure data is not stuck in memory bufffer for applications.
+4-RST - used to reset a connection or tell that that service is not there on a port.
+5-SYN - used to iniciate a conneciton.
+6-FIN - Finsihes out a conneciton
+
+
+Scanning techinques:
